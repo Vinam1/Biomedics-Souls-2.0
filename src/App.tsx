@@ -47,7 +47,7 @@ export default function App() {
     <AuthProvider>
       <CartProvider>
         <Initializer />
-        <Router>
+        <Router basename="/biomedics-souls">
           <ScrollToTop />
           <Suspense fallback={<PageLoader />}>
             <Routes>
