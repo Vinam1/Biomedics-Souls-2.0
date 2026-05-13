@@ -1,0 +1,107 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "lastName": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "superadmin", "cliente"] },
+        "phone": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["email", "role"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Store product information",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "shortDesc": { "type": "string" },
+        "desc": { "type": "string" },
+        "price": { "type": "number" },
+        "discountPrice": { "type": "number" },
+        "img": { "type": "string" },
+        "images": { "type": "array", "items": { "type": "string" } },
+        "sku": { "type": "string" },
+        "slug": { "type": "string" },
+        "categoryId": { "type": "string" },
+        "formatId": { "type": "string" },
+        "tagIds": { "type": "array", "items": { "type": "string" } },
+        "unit": { "type": "string" },
+        "quantity": { "type": "number" },
+        "netContent": { "type": "string" },
+        "status": { "type": "string" },
+        "usageInstructions": { "type": "string" },
+        "benefits": { "type": "array", "items": { "type": "string" } },
+        "applications": { "type": "string" },
+        "isFeatured": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "price", "categoryId"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer order",
+      "type": "object",
+      "properties": {
+        "orderNumber": { "type": "string" },
+        "clientId": { "type": "string" },
+        "status": { "type": "string" },
+        "total": { "type": "number" },
+        "items": { "type": "array" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "Category": {
+      "title": "Category",
+      "description": "Product category",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "slug": { "type": "string" }
+      }
+    },
+    "Tag": {
+      "title": "Tag",
+      "description": "Product tag",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "slug": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "User profiles"
+    },
+    "productos/{productId}": {
+      "schema": "Product",
+      "description": "Store products"
+    },
+    "pedidos/{orderId}": {
+      "schema": "Order",
+      "description": "Customer orders"
+    },
+    "categorias/{categoryId}": {
+      "schema": "Category",
+      "description": "Product categories"
+    },
+    "etiquetas/{tagId}": {
+      "schema": "Tag",
+      "description": "Product tags"
+    },
+    "formatos/{formatId}": {
+      "schema": "Category",
+      "description": "Product formats (reusing category schema for simplicity)"
+    }
+  }
+}

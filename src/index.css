@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --color-celeste: #7DD3FC;
+  --color-dark-blue: #1E3A8A;
+  --color-purple: #7E22CE;
+  --color-lilac: #D8B4FE;
+  --color-brand: var(--color-purple);
+  --color-brand-hover: #6B21A8;
+  --color-accent: var(--color-celeste);
+  --color-bg-light: #F8FAFC;
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-support: #10B981;
+  --color-footer: #0F172A;
+  --animate-spin-slow: spin 8s linear infinite;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background-color: #ffffff;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+.markdown-body p {
+  margin-bottom: 0.5rem;
+}
+
+.markdown-body p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body strong {
+  font-weight: 700;
+}
+
+.markdown-body ul, .markdown-body ol {
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+}
+
+.markdown-body li {
+  margin-bottom: 0.25rem;
+}
+
+.markdown-body ul {
+  list-style-type: disc;
+}
+
+.markdown-body ol {
+  list-style-type: decimal;
+}
